@@ -59,13 +59,12 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
-//        long localId = id;
-//        try {
-//            String SQL = "delete from users where id = ";
-//            Util.getConnection().createStatement().executeUpdate(SQL);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            String SQL = "delete from users u where u.id = ?";
+            Util.getConnection().createStatement().executeUpdate(SQL);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<User> getAllUsers() {
@@ -73,7 +72,6 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             String SQL = "SELECT * FROM users";
 
-//            ResultSet resultSet = Util.getConnection().prepareStatement(SQL).executeQuery();
                 ResultSet resultSet = Util.getConnection().createStatement().executeQuery(SQL);
                 while (resultSet.next()){
                 User user = new User();
@@ -92,7 +90,6 @@ public class UserDaoJDBCImpl implements UserDao {
         }
 
         return allUsers;
-//        return null;
     }
 
     public void cleanUsersTable() {

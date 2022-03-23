@@ -30,31 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() {
-//        return new UserServiceImpl().getAllUsers();
-        //        List<User> allUsers = new ArrayList<>();
-//        try {
-//            String SQL = "SELECT * FROM users";
-//
-////          ResultSet resultSet = Util.getConnection().prepareStatement(SQL).executeQuery();
-//            ResultSet resultSet = Util.getConnection().createStatement().executeQuery(SQL);
-//            while (resultSet.next()) {
-//                User user = new User();
-//
-//                user.setId(resultSet.getLong("id"));
-//                user.setName(resultSet.getString("name"));
-//                user.setLastName(resultSet.getString("lastname"));
-//                user.setAge((byte) resultSet.getInt("age"));
-//
-//                allUsers.add(user);
-//
-//            }
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-
-//        List<User> allUsers =
-        return new UserServiceImpl().getAllUsers();
+        return new UserDaoJDBCImpl().getAllUsers();
     }
 
     public void cleanUsersTable() {

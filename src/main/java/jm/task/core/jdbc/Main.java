@@ -15,10 +15,10 @@ public class Main {
        // userService.createUsersTable();
         //userService.dropUsersTable();
         //List<User> userList = userService.getAllUsers();
-        System.out.println(userService.getAllUsers());
+        //System.out.println(userService.getAllUsers());
 //        userService.saveUser("Tanya", "Timuraeva", (byte) 27);
 //        userService.saveUser("Stanislav", "Timuraev", (byte) 34);
         //userService.cleanUsersTable();
-        //userService.removeUserById(6);
+        userService.removeUserById(3);
     }
 }
