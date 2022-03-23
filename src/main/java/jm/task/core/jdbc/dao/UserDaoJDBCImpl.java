@@ -52,6 +52,7 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.setString(2, lastName);
             preparedStatement.setInt(3, age);
             preparedStatement.executeUpdate();
+            System.out.println("User с именем " + name + " добавлен в базу данных");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -60,8 +61,10 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void removeUserById(long id) {
         try {
-            String SQL = "delete from users u where u.id = ?";
-            Util.getConnection().createStatement().executeUpdate(SQL);
+            String SQL = "delete from users where id = ?";
+            PreparedStatement preparedStatement = Util.getConnection().prepareStatement(SQL);
+            preparedStatement.setLong(1, id);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
