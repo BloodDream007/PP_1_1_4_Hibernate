@@ -23,13 +23,5 @@ public class Main {
         userService.cleanUsersTable();
 
         userService.dropUsersTable();
-       // userService.createUsersTable();
-        //userService.dropUsersTable();
-        //List<User> userList = userService.getAllUsers();
-        //System.out.println(userService.getAllUsers());
-//        userService.saveUser("Tanya", "Timuraeva", (byte) 27);
-//        userService.saveUser("Stanislav", "Timuraev", (byte) 34);
-        //userService.cleanUsersTable();
-        //userService.removeUserById(7);
     }
 }
